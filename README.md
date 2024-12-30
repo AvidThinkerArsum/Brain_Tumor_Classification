@@ -86,30 +86,27 @@ Place the downloaded dataset into the sample_data/ folder.
 
 streamlit run app.py
 
-Usage
-Upload an MRI image using the Streamlit app.
-Select the model (CNN or Xception) for predictions.
-View:
-The classification result (tumor or no tumor).
-Confidence scores for each tumor type.
-Saliency maps showing the regions of the image that influenced the model's prediction.
+## Usage
+1. Upload an MRI image using the Streamlit app.
+2. Select the model (CNN or Xception) for predictions.
+3. View the classification result (tumor or no tumor), confidence scores for each tumor type, saliency maps showing the regions of the image that influenced the model's prediction.
 
-Jupyter Notebook Details
+## Jupyter Notebook Details
 The included notebook (data_processing_and_training.ipynb) contains:
 
-Dataset preprocessing steps:
-Data augmentation techniques for increasing dataset variability.
-Train-test split for robust evaluation.
+## Dataset preprocessing steps:
+1. Data augmentation techniques for increasing dataset variability.
+2. Train-test split for robust evaluation.
 Model training:
 Implementation of a custom CNN.
 Fine-tuning of the Xception pre-trained model.
-Evaluation:
+3. Evaluation:
 Accuracy, precision, recall, and F1-score metrics.
 
-Future Improvements
-Add more advanced saliency map visualizations (e.g., Grad-CAM).
-Experiment with other pre-trained architectures (e.g., ResNet, VGG).
-Include additional datasets for multi-class tumor classification.
+## Future Improvements
+1. Add more advanced saliency map visualizations (e.g., Grad-CAM).
+2. Experiment with other pre-trained architectures (e.g., ResNet, VGG).
+3. Include additional datasets for multi-class tumor classification.
 
-License
+## License
 This project is licensed under the MIT License.
