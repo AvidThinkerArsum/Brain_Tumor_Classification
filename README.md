@@ -2,29 +2,32 @@
 # Brain Tumor Classification Project
 
 ## Overview
-This project uses machine learning to classify brain tumors based on MRI images. The project provides an interactive Streamlit app (`app.py`) for predictions and visualization, as well as a Jupyter notebook for data preprocessing and model training. It also generates saliency maps to interpret model predictions.
+This project uses deep learning techniques to classify brain tumors based on MRI images. The project also provides an interactive platfrom through Streamlit for predictions and visualization, as well as saliency maps and interpretation for model predictions. All of this is found in the notebooks folder.
 
 The classification task involves identifying tumor types based on MRI scans, with confidence scores provided for each prediction.
 
 ---
 
 ## Features
-- Classifies brain tumors into different categories.
+- Classifies brain tumors into one of four different categories.
 - Generates saliency maps to visualize how the model makes predictions.
 - Provides confidence scores for each tumor type.
 - Enables comparison between two pre-trained models (e.g., `CNN` and `Xception`).
 - Includes interactive functionality via a Streamlit app.
+- Provides explanations for prediction
 
 ---
 
 ## Dataset
 - **Dataset Source**: The dataset used for this project contains brain MRI images labeled with tumor types. It can be downloaded from [Kaggle](https://www.kaggle.com/), specifically from the dataset titled "[Brain MRI Images for Brain Tumor Detection](https://www.kaggle.com/navoneel/brain-mri-images-for-brain-tumor-detection)".
-- **Structure**: The dataset includes two categories:
-  - Images with tumors.
-  - Images without tumors.
+- **Structure**: The dataset includes four categories and Test/Train Data:
+  - Glioma Tumors
+  - Meningioma Tumors
+  - Pituitary Tumors
+  - No tumors.
 - **Data Preprocessing**: The notebook includes steps for:
   - Data augmentation (e.g., rotation, flipping, scaling).
-  - Resizing images to a uniform size (e.g., 128x128 pixels).
+  - Resizing images to a uniform size.
   - Splitting the dataset into training, validation, and testing sets.
 
 ---
@@ -76,8 +79,7 @@ To set up and run the project locally, follow these steps:
 
 3. Download the Dataset:
 
-Download the dataset from Kaggle:
-https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset
+Download the dataset at Kaggle from the above link.
 Place the downloaded dataset into the sample_data/ folder.
 
 4. Run the Streamlit App: Start the application by running:
