@@ -48,9 +48,9 @@ The project implements and compares the following models:
 
 ---
 
-```plaintext
-
 ## Folder Structure
+
+```
 
 Brain-Tumor-Classification/
 ├── app.py                   # Main application script
