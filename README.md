@@ -48,6 +48,8 @@ The project implements and compares the following models:
 
 ---
 
+```plaintext
+
 ## Folder Structure
 
 Brain-Tumor-Classification/
@@ -59,6 +61,8 @@ Brain-Tumor-Classification/
 ├── models/                  # Pre-trained models
 ├── requirements.txt         # Project dependencies
 └── README.md                # Project documentation
+
+```
 
 Additionally you will need a GOOGLE_API_KEY and a NGROK_AUTH_KEY that can be easily generated online.
 The google api key helps with generating text to explain our model decision.
