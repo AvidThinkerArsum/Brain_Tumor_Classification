@@ -10,6 +10,10 @@ Watch the Demo here:
 
 [![Watch the Demo](https://img.youtube.com/vi/QWGz6a7xQn0/maxresdefault.jpg)](https://www.youtube.com/watch?v=QWGz6a7xQn0)
 
+## Watch the Demo
+[![Brain Tumor Classification Demo](https://img.youtube.com/vi/QWGz6a7x0n0/maxresdefault.jpg)](https://www.youtube.com/watch?v=QWGz6a7x0n0)
+
+
 
 ---
 
