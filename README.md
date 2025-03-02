@@ -6,10 +6,7 @@ This project uses deep learning techniques to classify brain tumors based on MRI
 
 The classification task involves identifying tumor types based on MRI scans, with confidence scores provided for each prediction.
 
-## Watch the Demo
-
-Click Below To Get Demo
-
+## Click Below To Get Demo
 
 [![Watch the Demo](Brain_Tumor_Classification_Project_Overview_.gif)](https://www.youtube.com/watch?v=QWGz6a7xQn0)
 
