@@ -8,8 +8,7 @@ The classification task involves identifying tumor types based on MRI scans, wit
 
 ## Watch the Demo
 
-[![Watch the Demo](https://img.youtube.com/vi/QWGz6a7xQn0/maxresdefault.jpg)](https://www.youtube.com/watch?v=QWGz6a7xQn0)
-
+[![Watch the Demo](Brain_Tumor_Classification_Project_Overview_.gif)](https://www.youtube.com/watch?v=QWGz6a7xQn0)
 
 ---
 
