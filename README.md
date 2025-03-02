@@ -74,6 +74,22 @@ The ngrok auth key helps build the streamlit pipeline and run it concurrently wi
 
 ---
 
+## Results
+
+How the UX looks like:
+
+![Image Description](static/Results/Screenshot%202024-12-30%20at%207.05.25%20PM.png)
+
+Finding Meningioma:
+
+![Image Description](static/Results/Screenshot%202024-12-30%20at%207.05.54%20PM.png)
+
+Saliency Map:
+
+![Saliency Map Example](static/saliency_maps/Meningioma.png)
+
+
+
 ## Installation
 To set up and run the project locally, follow these steps:
 
