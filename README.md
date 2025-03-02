@@ -76,7 +76,7 @@ The ngrok auth key helps build the streamlit pipeline and run it concurrently wi
 
 ## 🧑‍⚕️ Results
 
-### 📌 **User Interface Preview**
+### **User Interface Preview**
 Here's how the UX looks when using the Streamlit app:
 
 <p align="center">
@@ -85,7 +85,7 @@ Here's how the UX looks when using the Streamlit app:
 
 ---
 
-### 🧠 **Model Prediction Example: Meningioma Detected**
+### **Model Prediction Example: Meningioma Detected**
 The model successfully detects a **Meningioma tumor** in an MRI scan.
 
 <p align="center">
@@ -99,29 +99,12 @@ The model successfully detects a **Meningioma tumor** in an MRI scan.
 
 ---
 
-### 🔥 **Saliency Map Visualization**
+### **Saliency Map Visualization**
 The **saliency map** shows which regions influenced the model’s decision.
 
 <p align="center">
   <img src="static/saliency_maps/Meningioma.png" width="50%">
 </p>
-
-
-
-
-## Results
-
-How the UX looks like:
-
-![Image Description](static/Results/Screenshot%202024-12-30%20at%207.05.25%20PM.png)
-
-Finding Meningioma:
-
-![Image Description](static/Results/Screenshot%202024-12-30%20at%207.05.54%20PM.png)
-
-Saliency Map:
-
-![Saliency Map Example](static/saliency_maps/Meningioma.png)
 
 
 
