@@ -181,7 +181,52 @@ def load_xception_model(model_path):
 st.title("Brain Tumor Classification")
 st.write("Upload an image of a brain MRI scan to classify.")
 
+# Sample images section
+st.write("### Try with sample images:")
+col1, col2, col3, col4 = st.columns(4)
+
+sample_images = {
+    'Glioma': 'sample_data/Glioma.png',
+    'Meningioma': 'sample_data/Meningioma.png',
+    'No Tumor': 'sample_data/NoTumor.png',
+    'Pituitary': 'sample_data/Pituitary.png'
+}
+
+# Initialize session state for selected sample
+if 'selected_sample' not in st.session_state:
+    st.session_state.selected_sample = None
+
+with col1:
+    st.image(sample_images['Glioma'], caption='Glioma', use_container_width=True)
+    if st.button('Use Glioma Sample'):
+        st.session_state.selected_sample = sample_images['Glioma']
+
+with col2:
+    st.image(sample_images['Meningioma'], caption='Meningioma', use_container_width=True)
+    if st.button('Use Meningioma Sample'):
+        st.session_state.selected_sample = sample_images['Meningioma']
+
+with col3:
+    st.image(sample_images['No Tumor'], caption='No Tumor', use_container_width=True)
+    if st.button('Use No Tumor Sample'):
+        st.session_state.selected_sample = sample_images['No Tumor']
+
+with col4:
+    st.image(sample_images['Pituitary'], caption='Pituitary', use_container_width=True)
+    if st.button('Use Pituitary Sample'):
+        st.session_state.selected_sample = sample_images['Pituitary']
+
+st.write("### Or upload your own image:")
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
+
+# Use sample if selected, otherwise use uploaded file
+if st.session_state.selected_sample is not None:
+    uploaded_file = st.session_state.selected_sample
+    st.info(f"Using sample image: {os.path.basename(uploaded_file)}")
+    # Reset after use
+    if st.button("Clear sample selection"):
+        st.session_state.selected_sample = None
+        st.rerun()
 
 # the user has uploaded an image for scanning we want to give them the choice to choose between
 # the transfer learning model using xception
