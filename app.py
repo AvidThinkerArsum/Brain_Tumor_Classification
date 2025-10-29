@@ -83,7 +83,7 @@ def generate_explanation(img_path, model_prediction, confidence):
 
 # saliency shows which pixels in the image were the most important to deduce the conclusion
 
-def generate_saliency_map(model, img_array, class_index, img_size, img, uploaded_file):
+def generate_saliency_map(model, img_array, class_index, img_size, img, uploaded_file, file_name):
     with tf.GradientTape() as tape:
         img_tensor = tf.convert_to_tensor(img_array)
         tape.watch(img_tensor)
@@ -132,11 +132,18 @@ def generate_saliency_map(model, img_array, class_index, img_size, img, uploaded
     superimposed_img = heatmap * 0.7 + original_img * 0.3
     superimposed_img = superimposed_img.astype(np.uint8)
 
-    img_path = os.path.join(output_dir, uploaded_file.name)
-    with open(img_path, "wb") as f:
-        f.write(uploaded_file.getbuffer())
+    # Save original image for AI explanation
+    img_path = os.path.join(output_dir, file_name)
+    if isinstance(uploaded_file, str):
+        # It's a sample image path, copy it
+        import shutil
+        shutil.copy(uploaded_file, img_path)
+    else:
+        # It's an uploaded file object
+        with open(img_path, "wb") as f:
+            f.write(uploaded_file.getbuffer())
 
-    saliency_map_path = f'saliency_maps/{uploaded_file.name}'
+    saliency_map_path = f'saliency_maps/{file_name}'
 
     # Save the saliency map
     cv2.imwrite(saliency_map_path, cv2.cvtColor(superimposed_img, cv2.COLOR_RGB2BGR))
@@ -248,7 +255,16 @@ if uploaded_file is not None:
         img_size = (224,224)
 
     labels = ['Glioma', 'Meningioma', 'No tumor', 'Pituitary']
-    img = image.load_img(uploaded_file, target_size=img_size)
+
+    # Handle both file upload and sample image path
+    if isinstance(uploaded_file, str):
+        # It's a sample image path
+        img = image.load_img(uploaded_file, target_size=img_size)
+        file_name = os.path.basename(uploaded_file)
+    else:
+        # It's an uploaded file object
+        img = image.load_img(uploaded_file, target_size=img_size)
+        file_name = uploaded_file.name
     img_array = image.img_to_array(img)
     img_array = np.expand_dims(img_array, axis=0)
     img_array /= 255.0
@@ -264,7 +280,7 @@ if uploaded_file is not None:
     for label, prob in zip(labels, prediction[0]):
         st.write(f"{label}: {prob:.4f}")
 
-    saliency_map = generate_saliency_map(model, img_array, class_index, img_size, img, uploaded_file)
+    saliency_map = generate_saliency_map(model, img_array, class_index, img_size, img, uploaded_file, file_name)
 
     col1, col2 = st.columns(2)
     with col1:
@@ -272,7 +288,7 @@ if uploaded_file is not None:
     with col2:
         st.image(saliency_map, caption='Saliency Map', use_container_width=True)
 
-    saliency_map_path = f'saliency_maps/{uploaded_file.name}'
+    saliency_map_path = f'saliency_maps/{file_name}'
     explanation = generate_explanation(saliency_map_path, result, prediction[0][class_index])
 
     st.write("## Explanation")
