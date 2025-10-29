@@ -190,7 +190,6 @@ st.write("Upload an image of a brain MRI scan to classify.")
 
 # Sample images section
 st.write("### Try with sample images:")
-col1, col2, col3, col4 = st.columns(4)
 
 sample_images = {
     'Glioma': 'sample_data/Glioma.png',
@@ -203,25 +202,20 @@ sample_images = {
 if 'selected_sample' not in st.session_state:
     st.session_state.selected_sample = None
 
-with col1:
-    st.image(sample_images['Glioma'], caption='Glioma', use_container_width=True)
-    if st.button('Use Glioma Sample'):
-        st.session_state.selected_sample = sample_images['Glioma']
+# Create equal-width columns with uniform spacing
+col1, col2, col3, col4 = st.columns(4, gap="small")
 
-with col2:
-    st.image(sample_images['Meningioma'], caption='Meningioma', use_container_width=True)
-    if st.button('Use Meningioma Sample'):
-        st.session_state.selected_sample = sample_images['Meningioma']
+# Display images
+columns = [col1, col2, col3, col4]
+sample_names = ['Glioma', 'Meningioma', 'No Tumor', 'Pituitary']
 
-with col3:
-    st.image(sample_images['No Tumor'], caption='No Tumor', use_container_width=True)
-    if st.button('Use No Tumor Sample'):
-        st.session_state.selected_sample = sample_images['No Tumor']
-
-with col4:
-    st.image(sample_images['Pituitary'], caption='Pituitary', use_container_width=True)
-    if st.button('Use Pituitary Sample'):
-        st.session_state.selected_sample = sample_images['Pituitary']
+for col, name in zip(columns, sample_names):
+    with col:
+        # Display image with container width for uniform sizing
+        st.image(sample_images[name], use_container_width=True)
+        st.caption(name)
+        if st.button(f'Use {name} Sample', key=f'btn_{name}', use_container_width=True):
+            st.session_state.selected_sample = sample_images[name]
 
 st.write("### Or upload your own image:")
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
