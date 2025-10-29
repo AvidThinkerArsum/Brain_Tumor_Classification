@@ -74,7 +74,7 @@ def generate_explanation(img_path, model_prediction, confidence):
 
     img = PIL.Image.open(img_path)
 
-    model = genai.GenerativeModel(model_name="gemini-1.5-flash")
+    model = genai.GenerativeModel(model_name="gemini-2.0-flash-exp")
     response = model.generate_content([prompt, img])
 
     return response.text
