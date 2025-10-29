@@ -2,6 +2,12 @@
 
 An AI-powered web application that classifies brain MRI scans into four categories: **Glioma**, **Meningioma**, **Pituitary Tumor**, and **No Tumor**. Features explainable AI with saliency maps and AI-generated explanations.
 
+---
+
+## 🚀 **[Try the Live Demo Now!](https://brain-mri-classification-2024.streamlit.app/)**
+
+**Click above to test the app with your own MRI images or use our sample images - no installation required!**
+
 [![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Streamlit_Cloud-FF4B4B?style=for-the-badge)](https://brain-mri-classification-2024.streamlit.app/)
 
 ---
@@ -27,52 +33,30 @@ An AI-powered web application that classifies brain MRI scans into four categori
 ## 🎨 Example Results
 
 ### Pituitary Tumor Detection
-<table>
-<tr>
-<td width="50%">
 
-**Input MRI Scan**
+**Input MRI Scan:**
 
-<img src="sample_data/Pituitary.png" alt="Pituitary MRI" width="100%"/>
+<img src="sample_data/Pituitary.png" alt="Pituitary MRI" width="60%"/>
 
-</td>
-<td width="50%">
-
-**Model Prediction & Analysis**
+**Model Prediction & Analysis:**
 
 <img src="static/Results/Screenshot 2024-12-30 at 7.07.17 PM.png" alt="Pituitary Result" width="100%"/>
 
-✅ **Predicted:** Pituitary Tumor
-📈 **Confidence:** 99.98%
-🎯 **Status:** Correct Detection
+✅ **Predicted:** Pituitary Tumor | 📈 **Confidence:** 99.98% | 🎯 **Status:** Correct Detection
 
-</td>
-</tr>
-</table>
+---
 
 ### No Tumor (Healthy Brain)
-<table>
-<tr>
-<td width="50%">
 
-**Input MRI Scan**
+**Input MRI Scan:**
 
-<img src="sample_data/NoTumor.png" alt="No Tumor MRI" width="100%"/>
+<img src="sample_data/NoTumor.png" alt="No Tumor MRI" width="60%"/>
 
-</td>
-<td width="50%">
-
-**Model Prediction & Analysis**
+**Model Prediction & Analysis:**
 
 <img src="static/Results/Screenshot 2024-12-30 at 7.06.18 PM.png" alt="No Tumor Result" width="100%"/>
 
-✅ **Predicted:** No Tumor
-📈 **Confidence:** 99.91%
-🎯 **Status:** Correct Detection
-
-</td>
-</tr>
-</table>
+✅ **Predicted:** No Tumor | 📈 **Confidence:** 99.91% | 🎯 **Status:** Correct Detection
 
 ---
 
@@ -193,7 +177,7 @@ Brain-Tumor-Classification/
 
 | Model | Accuracy | Precision | Recall |
 |-------|----------|-----------|--------|
-| Custom CNN | 95%+ | High | High |
+| Custom CNN | 80-90% | High | High |
 | Xception | 97%+ | Very High | Very High |
 
 *Performance varies based on test set and specific tumor types*
