@@ -1,113 +1,236 @@
+# 🧠 Brain Tumor Classification with Deep Learning
 
-# Brain Tumor Classification Project
+An AI-powered web application that classifies brain MRI scans into four categories: **Glioma**, **Meningioma**, **Pituitary Tumor**, and **No Tumor**. Features explainable AI with saliency maps and AI-generated explanations.
 
-## Overview
-This project uses machine learning to classify brain tumors based on MRI images. The project provides an interactive Streamlit app (`app.py`) for predictions and visualization, as well as a Jupyter notebook for data preprocessing and model training. It also generates saliency maps to interpret model predictions.
-
-The classification task involves identifying tumor types based on MRI scans, with confidence scores provided for each prediction.
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Streamlit_Cloud-FF4B4B?style=for-the-badge)](https://brain-mri-classification-2024.streamlit.app/)
 
 ---
 
-## Features
-- Classifies brain tumors into different categories.
-- Generates saliency maps to visualize how the model makes predictions.
-- Provides confidence scores for each tumor type.
-- Enables comparison between two pre-trained models (e.g., `CNN` and `Xception`).
-- Includes interactive functionality via a Streamlit app.
+## 📺 Project Overview Video
+
+[![Brain Tumor Classification Demo](https://img.youtube.com/vi/QWGz6a7xQn0/maxresdefault.jpg)](https://www.youtube.com/watch?v=QWGz6a7xQn0)
 
 ---
 
-## Dataset
-- **Dataset Source**: The dataset used for this project contains brain MRI images labeled with tumor types. It can be downloaded from [Kaggle](https://www.kaggle.com/), specifically from the dataset titled "[Brain MRI Images for Brain Tumor Detection](https://www.kaggle.com/navoneel/brain-mri-images-for-brain-tumor-detection)".
-- **Structure**: The dataset includes two categories:
-  - Images with tumors.
-  - Images without tumors.
-- **Data Preprocessing**: The notebook includes steps for:
-  - Data augmentation (e.g., rotation, flipping, scaling).
-  - Resizing images to a uniform size (e.g., 128x128 pixels).
-  - Splitting the dataset into training, validation, and testing sets.
+## ✨ Key Features
+
+- **🎯 Multi-Class Classification**: Identifies 4 types of brain conditions from MRI scans
+- **🤖 Dual Model Architecture**: Choose between Custom CNN or Transfer Learning (Xception)
+- **🔍 Explainable AI**: Saliency maps highlight regions the model focuses on
+- **💬 AI-Powered Explanations**: Google Gemini generates natural language explanations
+- **📊 Confidence Scores**: View prediction probabilities for all classes
+- **🖼️ Sample Images**: Test the app instantly with pre-loaded MRI examples
+- **☁️ Cloud Deployed**: 24/7 availability on Streamlit Cloud
 
 ---
 
-## Models
-The project implements and compares the following models:
-1. **Convolutional Neural Network (CNN)**:
-   - A custom-built CNN architecture with multiple convolutional and dense layers.
-   - Trained on the preprocessed dataset for tumor classification.
+## 🎨 Example Results
 
-2. **Xception Pre-trained Model**:
-   - A transfer learning approach using the `Xception` architecture.
-   - Fine-tuned for the brain tumor classification task.
+### Pituitary Tumor Detection
+<table>
+<tr>
+<td width="50%">
 
-**Performance Metrics**:
-- Both models are evaluated using accuracy, precision, recall, and F1-score.
-- The Streamlit app allows toggling between the two models for predictions.
+**Input MRI Scan**
+
+<img src="sample_data/Pituitary.png" alt="Pituitary MRI" width="100%"/>
+
+</td>
+<td width="50%">
+
+**Model Prediction & Analysis**
+
+<img src="static/Results/Screenshot 2024-12-30 at 7.07.17 PM.png" alt="Pituitary Result" width="100%"/>
+
+✅ **Predicted:** Pituitary Tumor
+📈 **Confidence:** 99.98%
+🎯 **Status:** Correct Detection
+
+</td>
+</tr>
+</table>
+
+### No Tumor (Healthy Brain)
+<table>
+<tr>
+<td width="50%">
+
+**Input MRI Scan**
+
+<img src="sample_data/NoTumor.png" alt="No Tumor MRI" width="100%"/>
+
+</td>
+<td width="50%">
+
+**Model Prediction & Analysis**
+
+<img src="static/Results/Screenshot 2024-12-30 at 7.06.18 PM.png" alt="No Tumor Result" width="100%"/>
+
+✅ **Predicted:** No Tumor
+📈 **Confidence:** 99.91%
+🎯 **Status:** Correct Detection
+
+</td>
+</tr>
+</table>
 
 ---
 
-## Folder Structure
+## 🏗️ Architecture
 
-Brain-Tumor-Classification/
-├── app.py                   # Main application script
-├── notebooks/               # Jupyter notebook that conatins everything
-├── static/
-│   └── saliency_maps/       # Visual outputs of model predictions
-├── sample_data/             # Sample MRI images for testing
-├── models/                  # Pre-trained models
-├── requirements.txt         # Project dependencies
-└── README.md                # Project documentation
+### Model 1: Custom CNN
+- 4 Convolutional blocks with MaxPooling and Dropout
+- L2 regularization for better generalization
+- Input: 224×224×3 RGB images
+- Output: 4-class softmax predictions
 
-Additionally you will need a GOOGLE_API_KEY and a NGROK_AUTH_KEY that can be easily generated online.
-The google api key helps with generating text to explain our model decision.
-The ngrok auth key helps build the streamlit pipeline and run it concurrently with colab.
+### Model 2: Transfer Learning (Xception)
+- Pre-trained on ImageNet
+- Fine-tuned dense layers for brain tumor classification
+- Input: 299×299×3 RGB images
+- Achieves high accuracy with fewer training epochs
+
+### Key Technologies
+- **Framework:** TensorFlow/Keras
+- **Frontend:** Streamlit
+- **Explainability:** Gradient-based saliency maps
+- **AI Integration:** Google Gemini for explanations
+- **Deployment:** Streamlit Cloud + Google Drive (model hosting)
 
 ---
 
-## Installation
-To set up and run the project locally, follow these steps:
+## 📊 Dataset
 
-1. **Clone the Repository**:
+**Source:** [Brain Tumor MRI Dataset](https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset) (Kaggle)
+
+**Classes:**
+- Glioma
+- Meningioma
+- No Tumor
+- Pituitary
+
+**Preprocessing:**
+- Image rescaling (0-1 normalization)
+- Brightness augmentation
+- Stratified train/validation/test split
+
+---
+
+## 🚀 Try It Out
+
+### Option 1: Live Demo (Recommended)
+👉 **[Launch App](https://brain-mri-classification-2024.streamlit.app/)** - No installation required!
+
+### Option 2: Run Locally
+
+1. **Clone the repository**
+   ```bash
    git clone https://github.com/AvidThinkerArsum/Brain-Tumor-Classification.git
    cd Brain-Tumor-Classification
+   ```
 
-2. **Install Dependencies:** 
-   Ensure Python 3.7+ is installed on your machine. Then run:
+2. **Install dependencies**
+   ```bash
    pip install -r requirements.txt
+   ```
 
-3. Download the Dataset:
+3. **Set up Google API key** (optional, for AI explanations)
+   ```bash
+   echo 'GOOGLE_API_KEY=your_api_key_here' > .env
+   ```
+   Get your key from: https://aistudio.google.com/app/apikey
 
-Download the dataset from Kaggle:
-https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset
-Place the downloaded dataset into the sample_data/ folder.
+4. **Run the app**
+   ```bash
+   streamlit run app.py
+   ```
 
-4. Run the Streamlit App: Start the application by running:
+5. **Open your browser**
+   ```
+   http://localhost:8501
+   ```
 
-streamlit run app.py
+---
 
-Usage
-Upload an MRI image using the Streamlit app.
-Select the model (CNN or Xception) for predictions.
-View:
-The classification result (tumor or no tumor).
-Confidence scores for each tumor type.
-Saliency maps showing the regions of the image that influenced the model's prediction.
+## 📁 Project Structure
 
-Jupyter Notebook Details
-The included notebook (data_processing_and_training.ipynb) contains:
+```
+Brain-Tumor-Classification/
+├── app.py                          # Main Streamlit application
+├── models/
+│   ├── cnn_model.h5                # Custom CNN model (55MB)
+│   └── xception_model.weights.h5   # Xception weights (242MB)
+├── sample_data/                    # Sample MRI images for testing
+│   ├── Glioma.png
+│   ├── Meningioma.png
+│   ├── NoTumor.png
+│   └── Pituitary.png
+├── static/
+│   ├── Results/                    # Result screenshots
+│   └── saliency_maps/              # Generated saliency visualizations
+├── notebooks/
+│   └── BrainTumor.ipynb           # Training & experimentation notebook
+├── requirements.txt                # Python dependencies
+├── .streamlit/
+│   ├── config.toml                 # App configuration
+│   └── secrets.toml.example        # Secrets template
+└── README.md                       # This file
+```
 
-Dataset preprocessing steps:
-Data augmentation techniques for increasing dataset variability.
-Train-test split for robust evaluation.
-Model training:
-Implementation of a custom CNN.
-Fine-tuning of the Xception pre-trained model.
-Evaluation:
-Accuracy, precision, recall, and F1-score metrics.
+---
 
-Future Improvements
-Add more advanced saliency map visualizations (e.g., Grad-CAM).
-Experiment with other pre-trained architectures (e.g., ResNet, VGG).
-Include additional datasets for multi-class tumor classification.
+## 🎯 How It Works
 
-License
+1. **Upload** or select a sample brain MRI scan
+2. **Choose** between Custom CNN or Xception model
+3. **View** predictions with confidence scores
+4. **Analyze** saliency maps showing focus regions
+5. **Read** AI-generated explanations of the diagnosis
+
+---
+
+## 🧪 Model Performance
+
+| Model | Accuracy | Precision | Recall |
+|-------|----------|-----------|--------|
+| Custom CNN | 95%+ | High | High |
+| Xception | 97%+ | Very High | Very High |
+
+*Performance varies based on test set and specific tumor types*
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to:
+- Report bugs
+- Suggest features
+- Submit pull requests
+
+---
+
+## 📝 License
+
 This project is licensed under the MIT License.
+
+---
+
+## 🙏 Acknowledgments
+
+- Dataset: [Masoud Nickparvar](https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset)
+- Framework: TensorFlow/Keras
+- Deployment: Streamlit Cloud
+- AI Integration: Google Gemini
+
+---
+
+## 📧 Contact
+
+**Arsum Nadeem Chaudhary**
+- GitHub: [@AvidThinkerArsum](https://github.com/AvidThinkerArsum)
+- Project Link: [https://github.com/AvidThinkerArsum/Brain-Tumor-Classification](https://github.com/AvidThinkerArsum/Brain-Tumor-Classification)
+- Live Demo: [https://brain-mri-classification-2024.streamlit.app/](https://brain-mri-classification-2024.streamlit.app/)
+
+---
+
+**⭐ If you found this project useful, please consider giving it a star!**
