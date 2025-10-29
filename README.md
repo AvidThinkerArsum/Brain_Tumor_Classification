@@ -34,29 +34,53 @@ An AI-powered web application that classifies brain MRI scans into four categori
 
 ### Pituitary Tumor Detection
 
+<div align="center">
+
 **Input MRI Scan:**
 
-<img src="sample_data/Pituitary.png" alt="Pituitary MRI" width="60%"/>
+<img src="sample_data/Pituitary.png" alt="Pituitary MRI" width="50%"/>
+
+</div>
+
+<div align="center">
 
 **Model Prediction & Analysis:**
 
-<img src="static/Results/Screenshot 2024-12-30 at 7.07.17 PM.png" alt="Pituitary Result" width="100%"/>
+<img src="static/Results/Screenshot 2024-12-30 at 7.07.17 PM.png" alt="Pituitary Result" width="85%"/>
+
+</div>
+
+<div align="center">
 
 ✅ **Predicted:** Pituitary Tumor | 📈 **Confidence:** 99.98% | 🎯 **Status:** Correct Detection
+
+</div>
 
 ---
 
 ### No Tumor (Healthy Brain)
 
+<div align="center">
+
 **Input MRI Scan:**
 
-<img src="sample_data/NoTumor.png" alt="No Tumor MRI" width="60%"/>
+<img src="sample_data/NoTumor.png" alt="No Tumor MRI" width="50%"/>
+
+</div>
+
+<div align="center">
 
 **Model Prediction & Analysis:**
 
-<img src="static/Results/Screenshot 2024-12-30 at 7.06.18 PM.png" alt="No Tumor Result" width="100%"/>
+<img src="static/Results/Screenshot 2024-12-30 at 7.06.18 PM.png" alt="No Tumor Result" width="85%"/>
+
+</div>
+
+<div align="center">
 
 ✅ **Predicted:** No Tumor | 📈 **Confidence:** 99.91% | 🎯 **Status:** Correct Detection
+
+</div>
 
 ---
 
